@@ -1,9 +1,17 @@
-## Password Generator
 
+# Password Generator
+## Description
+This password generator is customizable based on user need. A password can be randomly generated with a length between 8 and 128 characters consisting of any combination of numbers, upper-case letters, lower-case letters, and special characters. Multiple passwords meeting the users specifications can be generated using the 'generate password' button. 
+
+## Screenshot
+[Welcome Prompt] (./assets/images/welcome.jpg)
+[Password Generator] (./assets/images/passgen.jpg)
+
+## Launch Password Generator
 Visit my generator here:  https://telacaul.github.io/js_password_generator/
 
 
-# Acceptance Criteria
+## Acceptance Criteria
 
 AS AN employee with access to sensitive data
 I WANT to randomly generate a password that meets certain criteria
