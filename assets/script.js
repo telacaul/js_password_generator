@@ -70,7 +70,7 @@ var userIntro = function(){
       if (info >= 9 && info <= 128){
         range = true;
       }else{
-        alert("Error: You must choose a number between 8 and 128");
+        alert("Error: You must choose a number between 8 and 128.");
         info = prompt ("Please type the length of the password\n" + 
         "It must be between 8 and 128 characters");
       }
@@ -86,32 +86,36 @@ var userIntro = function(){
 
 var userSelection = function(){
   var x = 0; //user must select at least one option
-    while (x===0)
+    while (x==0)
     {
       for(var i=0; i<userChoice.length; i++) {
-        userChoice[i].value = confirm("Would you like to include " + userChoice[i].name);
+        userChoice[i].value = confirm("Would you like to include " + userChoice[i].name + "?");
         if (userChoice[i].value){
           x++;
         }
       }
   
     //make sure user chose one option
-  if(x===0){
+  if(x==0){
     alert("You have to choose at least one option for your password" +
-      "/n 1. " + userChoice[0].name+
-      "/n 2. " + userChoice[1].name+
-      "/n 3. " + userChoice[2].name+
-      "/n 4. " + userChoice[3].name+);
+      "\n 1. " + userChoice[0].name+
+      "\n 2. " + userChoice[1].name+
+      "\n 3. " + userChoice[2].name+
+      "\n 4. " + userChoice[3].name);
     }
   }
   return x;
 };
 
+//Generate password function
+
 var generatePassword = function(){
   var strong = "";
   var pass = "";
 
-  alert("Welcome to Password Generator!/n"+"In your next steps, you must choose:\n" +
+  //intro message
+
+  alert("Welcome to Password Generator!\n" + "In your next steps, you must choose:\n" +
   "** Length of password (between 8 and 128 characters)\n" +
   "** Lowercase characters\n" +
   "** Uppercase characters\n" +
@@ -121,7 +125,7 @@ var generatePassword = function(){
   lengthPass = userIntro();
   var x = userSelection();
 
-  for(var i=0, i<Math.floor(lengthPass/x)+1; i++) {
+  for(var i=0; i<Math.floor(lengthPass/x)+1; i++) {
     if(userChoice[0].value){
       strong += listCharacter.getLowerCase()[Math.floor(Math.random()*listCharacter.getLowerCase().length)];
     }
@@ -130,23 +134,21 @@ var generatePassword = function(){
       strong += listCharacter.getUpperCase()[Math.floor(Math.random()*listCharacter.getUpperCase().length)];
     }
 
-    
+    if(userChoice[2].value){
+      str += listCharacter.getNumbers()[Math.floor(Math.random()*listChar.getNumbers().length)];
+    }
+
+    if(userChoice[3].value){
+      str += listCharacter.getSpecialChar()[Math.floor(Math.random()*listChar.getSpecialChar().length)];
+    }
   }
+
+  for(var i=0; i<lengthPass; i++){
+    pass+= strong[Math.floor(Math.random()*str.length)];
+  }
+
+  return pass;
 }
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -161,17 +163,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//genearate random password
-function generate(){
-
-//possible password values
-let values = "";
-
-let password = "";
-
-//for loop to choose password characters
-for (var i=0; i<Math.floor(lengthPass/x)+1; i++){
-}
-}
-
