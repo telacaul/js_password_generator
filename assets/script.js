@@ -135,11 +135,11 @@ var generatePassword = function(){
     }
 
     if(userChoice[2].value){
-      str += listCharacter.getNumbers()[Math.floor(Math.random()*listChar.getNumbers().length)];
+      strong += listCharacter.getNumbers()[Math.floor(Math.random()*listChar.getNumbers().length)];
     }
 
     if(userChoice[3].value){
-      str += listCharacter.getSpecialChar()[Math.floor(Math.random()*listChar.getSpecialChar().length)];
+      strong += listCharacter.getSpecialChar()[Math.floor(Math.random()*listChar.getSpecialChar().length)];
     }
   }
 
@@ -159,7 +159,14 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  alert("Your password is:\n" + password);
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+// Need to figure out why password isn't generating - all prompts work correctly
