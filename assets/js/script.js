@@ -2,7 +2,7 @@
 
 //Variables
 //value of length of password
-var lengthPass= null; 
+var lengthPss= null; 
 
 //choice of character types (Boolean)
 userChoice = [
@@ -76,7 +76,7 @@ var userIntro = function(){
       }
     } else {
       alert("You must choose a valid number");
-      info = prompt ("Please type the length of the password\n" + 
+      info = prompt ("Ple`ase type the length of the password\n" + 
       "It must be between 8 and 128 characters");
     }
   }
@@ -122,10 +122,10 @@ var generatePassword = function(){
   "** Numbers\n" +
   "** Special characters");
 
-  lengthPass = userIntro();
+  lengthPss = userIntro();
   var x = userSelection();
 
-  for(var i=0; i<Math.floor(lengthPass/x)+1; i++) {
+  for(var i=0; i<Math.floor(lengthPss/x)+1; i++) {
     if(userChoice[0].value){
       strong += listCharacter.getLowerCase()[Math.floor(Math.random()*listCharacter.getLowerCase().length)];
     }
@@ -143,7 +143,7 @@ var generatePassword = function(){
     }
   }
 
-  for(var i=0; i<lengthPass; i++){
+  for(var i=0; i<lengthPss; i++){
     pass+= strong[Math.floor(Math.random()*str.length)];
   }
 
